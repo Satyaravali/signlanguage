@@ -11,7 +11,7 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications import MobileNet
 from tensorflow.keras.applications.mobilenet import preprocess_input
 #import subprocess
-#if not os.path.isfile('Sign-language/models/SignL.h5'):
+#if not os.path.isfile('Sign-language-main/Sign-language/models/SignL.h5'):
     #subprocess.run(['curl --output SignL.h5 "https://media.githubusercontent.com/media/JwalithaKumar/Sign-language/main/sep_5.h5"'], shell=True)
 
 
@@ -40,7 +40,7 @@ if uploaded_file!=None:
 x = st.button("Predict")
 if x:
     with st.spinner("Thinking..."):
-        model = load_model('Sign-language/models/SignL.h5', compile = False)
+        model = load_model('Sign-language-main/Sign-language/models/SignL.h5', compile = False)
         image = Image.open(uploaded_file)
         size = (224, 224)
         image = ImageOps.fit(image, size)
